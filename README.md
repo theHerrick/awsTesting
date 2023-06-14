@@ -1,3 +1,0 @@
-# awsTesting
-
-Testing cd site
