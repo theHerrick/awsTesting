@@ -17,6 +17,16 @@ img {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 50%;
+  margin-bottom: 50px;
+  max-width: 20%;
   height: auto;
+}
+
+.formStyle {
+  max-width: 20%;
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
