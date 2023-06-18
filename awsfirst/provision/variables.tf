@@ -12,3 +12,12 @@ variable "dynamodb_name" {
 variable "ecr_name" {
   type = string
 }
+
+variable "lambda_name" {
+  type = string
+}
+
+variable "api_name" {
+  type = string
+}
+
