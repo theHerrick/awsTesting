@@ -1,11 +1,14 @@
 variable "app_identifier" {
-  type        = string
-  default     = "APP123456"
+  type    = string
+  default = "APP123456"
 }
 
 variable "environment" {
-  type        = string
+  type = string
 }
 variable "dynamodb_name" {
-  type        = string
+  type = string
+}
+variable "ecr_name" {
+  type = string
 }
