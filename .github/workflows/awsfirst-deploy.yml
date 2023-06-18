@@ -27,7 +27,7 @@ jobs:
       
     - name: Check Directory
       run: ls
-      working-directory: ${GITHUB_WORKSPACE}/awsTesting/awsfirst/provision
+      working-directory: ${{ github.workspace }}/awsTesting/awsfirst/provision
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
