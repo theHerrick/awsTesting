@@ -1,6 +1,9 @@
 name: 'AWS First Deploy'
 
-on: workflow_dispatch
+on:
+  push:
+    branches: ['main']
+    paths: ['awsfirst/provision/**']
 
 permissions:
   contents: read
