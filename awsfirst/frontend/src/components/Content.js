@@ -5,7 +5,7 @@ function Content() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://wk8t22cep4.execute-api.eu-west-2.amazonaws.com/items')
+    fetch('https://t9tdnd63t9.execute-api.eu-west-2.amazonaws.com/awsteam')
       .then(response => response.json())
       .then(jsonData => setData(jsonData))
       .catch(error => console.error(error));

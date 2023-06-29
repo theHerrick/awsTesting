@@ -7,11 +7,6 @@ resource "aws_ecr_repository" "awsfirst_ecr" {
   }
 
   force_delete = true
-
-  tags = {
-    app_identifier = var.app_identifier
-    Environment    = var.environment
-  }
 }
 resource "null_resource" "ecr_image" {
   depends_on = [aws_ecr_repository.awsfirst_ecr]

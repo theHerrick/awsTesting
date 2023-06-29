@@ -28,4 +28,3 @@ override.tf.json
 terraform.rc
 
 .terraform*
-lambda_function_payload.zip

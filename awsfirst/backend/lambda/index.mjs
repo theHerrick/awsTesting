@@ -11,7 +11,7 @@ const client = new DynamoDBClient({});
 
 const dynamo = DynamoDBDocumentClient.from(client);
 
-const tableName = "awsteam";
+const tableName = "awsfirst";
 
 export const handler = async (event, context) => {
   let body;
@@ -57,8 +57,8 @@ export const handler = async (event, context) => {
             TableName: tableName,
             Item: {
               id: requestJSON.id,
-              name: requestJSON.name,
-              email: requestJSON.email,
+              title: requestJSON.title,
+              description: requestJSON.description,
             },
           })
         );
