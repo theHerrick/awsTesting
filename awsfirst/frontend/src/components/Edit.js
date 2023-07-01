@@ -18,7 +18,7 @@ function EditPage() {
     };
 
     // Send the POST request using the 'fetch' function or any HTTP library of your choice
-    fetch('https://t9tdnd63t9.execute-api.eu-west-2.amazonaws.com/awsteam', {
+    fetch('https://2qfaux4ro8.execute-api.eu-west-2.amazonaws.com/awsteam', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

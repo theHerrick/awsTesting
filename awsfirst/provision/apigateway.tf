@@ -1,6 +1,10 @@
 resource "aws_apigatewayv2_api" "awsfirst-api" {
   name          = var.api_name
   protocol_type = "HTTP"
+
+  cors_configuration {
+    allow_origins = ["*"]
+  }
 }
 
 resource "aws_apigatewayv2_stage" "awsfirst-stage" {
@@ -12,6 +16,7 @@ resource "aws_apigatewayv2_stage" "awsfirst-stage" {
 
 resource "aws_apigatewayv2_integration" "awsfirst-api-integration" {
   api_id = aws_apigatewayv2_api.awsfirst-api.id
+  payload_format_version = "2.0"
 
   integration_uri    = aws_lambda_function.awsfirst_lambda.invoke_arn
   integration_type   = "AWS_PROXY"
