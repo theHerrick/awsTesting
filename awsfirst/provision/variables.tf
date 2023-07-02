@@ -28,7 +28,3 @@ variable "ecs_service_name" {
 variable "ecs_execution_role" {
   type = string
 }
-
-variable "ecs_service_subnets" {
-  
-}

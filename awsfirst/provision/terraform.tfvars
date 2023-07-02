@@ -6,4 +6,3 @@ ecs_cluster_name = "awsfirst-cluster"
 ecs_task_def_name = "awsfirst-task"
 ecs_service_name = "awsfirst-service"
 ecs_execution_role = "arn:aws:iam::941603547826:role/ecsTaskExecutionRole"
-ecs_service_subnets = [ "subnet-090ed0bdf69443cb7", "subnet-0cde60965e3037654", "subnet-0aa22399fc412c376" ]

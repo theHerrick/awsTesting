@@ -40,8 +40,22 @@ resource "aws_ecs_task_definition" "awsfirst_task_def" {
 
 }
 
+resource "aws_cloudwatch_log_group" "ecs-logs" {
+  name = "awsfirst-ecs-logs"
+}
+
 resource "aws_ecs_cluster" "awsfirst_cluster" {
   name = var.ecs_cluster_name
+  configuration {
+    execute_command_configuration {
+      logging    = "OVERRIDE"
+
+      log_configuration {
+        cloud_watch_encryption_enabled = false
+        cloud_watch_log_group_name     = aws_cloudwatch_log_group.ecs-logs.name
+      }
+    }
+  }
 }
 
 resource "aws_ecs_service" "awsfirst_service" {
@@ -51,8 +65,15 @@ resource "aws_ecs_service" "awsfirst_service" {
   desired_count   = 1
   launch_type = "FARGATE"
 
+  load_balancer {
+    target_group_arn = aws_lb_target_group.awsfirst-lb-target.arn
+    container_name   = "awsfirst"
+    container_port   = 80
+  }
+
   network_configuration {
-    subnets = var.ecs_service_subnets
-    assign_public_ip = true
+    subnets = [aws_subnet.awsfirst-subnet-private.id]
+    security_groups = [aws_security_group.awsfirst-private-subnet-sg.id]
+    assign_public_ip = false
   }
 }
